@@ -1,3 +1,5 @@
+## Assignment 1
+
 #### What is a neural network neuron?
 #### What is the use of the learning rate?
 #### How are weights initialized?
