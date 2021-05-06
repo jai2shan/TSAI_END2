@@ -1,7 +1,26 @@
 # Assignment 1
+### Group Members
+Santosh Boina - santoshb183@gmail.com
+Sai Ashok Kumar Reddy - saiashokumareddy@gmail.com
+Jayasankar Raju S - muralis2raj@gmail.com
+
 
 ## What is a neural network neuron?
-     
+A neuron is a function, which multiplies all the input variables with weight and  fed into an activation function which spits value that is the output of the neuron. Weights of the input variables are defined/decided in such a way that output of the all the neurons together gives us the better predicted output.
+A neural network is combination of multiple groups of neurons which are sequentially connected.
+
+The neuron translates inputs into a single output, which can then be picked up as input for another layer of neurons later on. The neuron is nothing more than a set of inputs, a set of weights, and an activation function. The neuron translates these inputs into a single output, which can then be picked up as input for another layer of neurons later on.
+
+While details can vary between neural networks, the function f(x1,x2,…,xn) is often just a weighted sum:
+######            f(x1,x2,…,xn)=w1⋅x1+w2⋅x2+...+wn⋅xn
+Each neuron has a weight vector w=(w1,w2,...,wn), where n is the number of inputs to that neuron. These inputs can be either the 'raw' input features — say temperature, precipitation, and wind speed for a weather model — or the output of neurons from an earlier layer.
+
+The weights for each neuron are turned during the training stage such that the final network output is biased toward some value (usually 1) for signal, and another (usually -1 or 0) for background.
+
+Non-linear behavior in a neural network is accomplished by use of an activation function (often a sigmoid function) to which the output of f is passed and modified. This allows neural networks to describe more complicated systems while still combining inputs in a simple fashion.
+
+Source : https://stats.stackexchange.com/questions/241888/what-are-neurons-in-neural-networks-how-do-they-work/241904
+
 ## What is the use of the learning rate? 
 In machine learning and statistics, the learning rate is a tuning parameter in an optimization algorithm that determines the step size at each iteration while moving toward a minimum of a loss function. Since it influences to what extent newly acquired information overrides old information, it metaphorically represents the speed at which a machine learning model "learns".      
 
