@@ -1,8 +1,8 @@
 # Assignment 1
 ### Group Members
-Santosh Boina - santoshb183@gmail.com
-Sai Ashok Kumar Reddy - saiashokumareddy@gmail.com
-Jayasankar Raju S - muralis2raj@gmail.com
+Santosh Boina - santoshb183@gmail.com              
+Sai Ashok Kumar Reddy - saiashokumareddy@gmail.com                
+Jayasankar Raju S - muralis2raj@gmail.com             
 
 
 ## What is a neural network neuron?
