@@ -37,3 +37,43 @@ Network
 <div style="text-align:center"><img src="images/Network.PNG" /><div>
 
 <div style="text-align:left"></><div>
+
+Equations of each neuron
+
+    h1 = w1*i1+w2*i2		
+    h2 = w3*i1+w4*i2		
+    a_h1 = 𝝈(h1) = 1/1+exp(-h1)	
+    a_h2 = 𝝈(h2) = 1/1+exp(-h2)		
+    o1 = w5*a_h1+ w6*a_h2		
+    o2 = w7*a_h1 + w8*a_h2		
+    a_o1 = 𝝈(o1) = 1/1+exp(-o1)		
+    a_o2 = 𝝈(o2) = 1/1+exp(-o2)		
+    E1 = (1/2) * (t1-a_o1)^2 		
+    E1 = (1/2) * (t2-a_o2)^2 		
+    E_Total = E1 + E2		
+
+Back Propagation:
+
+    𝜕E_t/𝜕w5 =  𝜕(E1+E2)/𝜕w5  = 𝜕E1/𝜕w5 = (𝜕E1/𝜕a_o1)* (𝜕a_o1/𝜕o1)*(𝜕o1/𝜕w5)												
+    𝜕E1/𝜕a_o1 =𝜕 [(1/2) * (t1-a_o1)^2] /𝜕a_o1 = (t1 - a_o1)*(-1) = a_o1 - t1												
+    𝜕a_o1/𝜕o1 = 𝜕 (𝝈(o1))/𝜕o1 = 𝝈(o1) * (1-𝝈1(o1)) = a_o1 * (1-a_o1)												
+    𝜕o1/𝜕w5 = a_h1												
+    𝜕E_t/𝜕w5 = (a_o1-t1) * a_o1 * (1-a_o1) * a_h1												
+    𝜕E_t/𝜕w6 = (a_o1-t1) * a_o1 * (1-a_o1) * a_h2												
+    𝜕E_t/𝜕w7 = (a_o2-t2) * a_o2 * (1-a_o2) * a_h1												
+    𝜕E_t/𝜕w8 = (a_o2-t1) * a_o2 * (1-a_o2) * a_h2							                                        
+    𝜕E1/𝜕a_h2  = (a_o2-t2)* a_o2 * (1-a_o2) * w8 +  (a_o1-t1)* a_o1 * (1-a_o1) * w6												
+                                                                   
+    𝜕E_t/𝜕a_h1 = 𝜕(E1+E2)/𝜕w5												
+    𝜕E1/𝜕a_h1 = (𝜕E1/𝜕a_o1) * (𝜕a_o1/𝜕o1) * (𝜕o1/𝜕a_h1) = (a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7							
+                                                    
+    𝜕E_t/𝜕w1 = (ET/a_o1) * (a_o1/o1) * (o1/a_h1) * (a_h1/h1) * (h1/w1)												
+    𝜕E_t/𝜕w1 = (𝜕ET/𝜕a_h1) * (𝜕a_h1/𝜕h1) * (𝜕h1/𝜕w1)												
+    𝜕E_t/𝜕w1 = (𝜕ET/𝜕a_h1) * (a_h1) * (1-a_h1) * 𝜕h1/𝜕w1												
+    𝜕E_t/𝜕w1 = (𝜕ET/𝜕a_h1) * (a_h1) * (1-a_h1) * i1												
+    𝜕E_t/𝜕w2 = (𝜕ET/𝜕a_h1) * (a_h1) * (1-a_h1) * i2												
+    𝜕E_t/𝜕w3 = (𝜕ET/𝜕a_h2) * (a_h2) * (1-a_h2) * i1												
+    𝜕E_t/𝜕w4 = (𝜕ET/𝜕a_h2) * (a_h2) * (1-a_h2) * i2												
+                                                    
+    𝜕E_t/𝜕w1 =  ((a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7) * (a_h1) * (1-a_h1) * i1"												
+												
