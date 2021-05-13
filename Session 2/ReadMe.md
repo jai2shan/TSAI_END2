@@ -1,4 +1,4 @@
-## <center>Assignment 2</center>
+## <center> Assignment 2 </center>
 ### **Group Members**
 Santosh Boina - santoshb183@gmail.com              
 Sai Ashok Kumar Reddy - saiashokumareddy@gmail.com              
