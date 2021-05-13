@@ -117,4 +117,4 @@ Calculation of 𝜕E_t/𝜕w1
     𝜕E_t/𝜕w4 = (𝜕ET/𝜕a_h2) * (a_h2) * (1-a_h2) * i2												
                                                     
     𝜕E_t/𝜕w1 =  ((a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7) * (a_h1) * (1-a_h1) * i1												
-												
+Upon getting all the 𝜕E_t/𝜕wi values, we can replace it in the gradient descent equation to update the weights for every epoch during training.											
