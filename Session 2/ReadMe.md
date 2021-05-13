@@ -36,8 +36,25 @@ Network
 
 <div style="text-align:center"><img src="images/Network.PNG" /><div>
 
+Blue boxes in the network are the initialized weights
 <div style="text-align:left"></><div>
 
+#### ***Step 1**: Weight Initialization*
+Initialize the weights of the neural network. For the sake of convenience we exclude bias from  our calculcation
+
+| Weight | Value 
+|--------|-------:
+| w1     | 0.15  
+| w2     | 0.20
+| w3     | 0.25
+| w4     | 0.30
+| w5     | 0.40
+| w6     | 0.45
+| w7     | 0.50
+| w8     | 0.55
+ 
+#### ***Step 2**: Feed Forward*
+We calculate the output of each neuron over the network using the below equations and initialized weights
 Equations of each neuron
 
     h1 = w1*i1+w2*i2		
@@ -52,7 +69,13 @@ Equations of each neuron
     E1 = (1/2) * (t2-a_o2)^2 		
     E_Total = E1 + E2		
 
-Back Propagation:
+#### ***Step 3**: Back Propagation*
+Objective of this step is to incrementally adjust the weights in order for the network to produce values as close as possible to the expected values from the training data.
+Update any weights in the backpropagation using the below equation     
+wnewi=woldi−LR(∂Error∂woldi) 
+\frac{\partial Q}{\partial t} = \frac{\partial s}{\partial t}
+
+
 
     𝜕E_t/𝜕w5 =  𝜕(E1+E2)/𝜕w5  = 𝜕E1/𝜕w5 = (𝜕E1/𝜕a_o1)* (𝜕a_o1/𝜕o1)*(𝜕o1/𝜕w5)												
     𝜕E1/𝜕a_o1 =𝜕 [(1/2) * (t1-a_o1)^2] /𝜕a_o1 = (t1 - a_o1)*(-1) = a_o1 - t1												
@@ -75,5 +98,5 @@ Back Propagation:
     𝜕E_t/𝜕w3 = (𝜕ET/𝜕a_h2) * (a_h2) * (1-a_h2) * i1												
     𝜕E_t/𝜕w4 = (𝜕ET/𝜕a_h2) * (a_h2) * (1-a_h2) * i2												
                                                     
-    𝜕E_t/𝜕w1 =  ((a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7) * (a_h1) * (1-a_h1) * i1"												
+    𝜕E_t/𝜕w1 =  ((a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7) * (a_h1) * (1-a_h1) * i1												
 												
