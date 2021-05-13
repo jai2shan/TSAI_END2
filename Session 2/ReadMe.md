@@ -72,23 +72,41 @@ Equations of each neuron
 #### ***Step 3**: Back Propagation*
 Objective of this step is to incrementally adjust the weights in order for the network to produce values as close as possible to the expected values from the training data.
 Update any weights in the backpropagation using the below equation     
-wnewi=woldi−LR(∂Error∂woldi) 
-\frac{\partial Q}{\partial t} = \frac{\partial s}{\partial t}
 
+<div style="text-align:center"><img src="images/GradientDescentEq.PNG" /><div>
+<div style="text-align:left"></><div>
 
+Chain Rule in calculus:    
 
-    𝜕E_t/𝜕w5 =  𝜕(E1+E2)/𝜕w5  = 𝜕E1/𝜕w5 = (𝜕E1/𝜕a_o1)* (𝜕a_o1/𝜕o1)*(𝜕o1/𝜕w5)												
+<div style="text-align:center"><img src="images/GradientDescentEq.PNG" /><div>
+<div style="text-align:left"></><div>
+
+In order to update the weights from w1 to w8 we need to identify values of the  𝜕E_t/𝜕wi where i = 1,2,3...8
+
+To find value of 
+
+E2 when calculated with respect to w5 is zero, as there is no contribution of w5 in E2. Based on above chain rule in calculus "𝜕E_t/𝜕w5" can be written as combination of (𝜕E1/𝜕a_o1)* (𝜕a_o1/𝜕o1)*(𝜕o1/𝜕w5)
+
+    𝜕E_t/𝜕w5 =  𝜕(E1+E2)/𝜕w5  = 𝜕E1/𝜕w5 = (𝜕E1/𝜕a_o1)* (𝜕a_o1/𝜕o1)*(𝜕o1/𝜕w5)
+
     𝜕E1/𝜕a_o1 =𝜕 [(1/2) * (t1-a_o1)^2] /𝜕a_o1 = (t1 - a_o1)*(-1) = a_o1 - t1												
     𝜕a_o1/𝜕o1 = 𝜕 (𝝈(o1))/𝜕o1 = 𝝈(o1) * (1-𝝈1(o1)) = a_o1 * (1-a_o1)												
-    𝜕o1/𝜕w5 = a_h1												
-    𝜕E_t/𝜕w5 = (a_o1-t1) * a_o1 * (1-a_o1) * a_h1												
+    𝜕o1/𝜕w5 = a_h1	
+    											
+    𝜕E_t/𝜕w5 = (a_o1-t1) * a_o1 * (1-a_o1) * a_h1							
+
+Replicating the same logic of 𝜕E_t/𝜕w5 to 𝜕E_t/𝜕w6, 𝜕E_t/𝜕w7, 𝜕E_t/𝜕w8
+
     𝜕E_t/𝜕w6 = (a_o1-t1) * a_o1 * (1-a_o1) * a_h2												
     𝜕E_t/𝜕w7 = (a_o2-t2) * a_o2 * (1-a_o2) * a_h1												
-    𝜕E_t/𝜕w8 = (a_o2-t1) * a_o2 * (1-a_o2) * a_h2							                                        
-    𝜕E1/𝜕a_h2  = (a_o2-t2)* a_o2 * (1-a_o2) * w8 +  (a_o1-t1)* a_o1 * (1-a_o1) * w6												
-                                                                   
+    𝜕E_t/𝜕w8 = (a_o2-t1) * a_o2 * (1-a_o2) * a_h2																
+
+Calculation of 𝜕E_t/𝜕w1
+                                         
     𝜕E_t/𝜕a_h1 = 𝜕(E1+E2)/𝜕w5												
-    𝜕E1/𝜕a_h1 = (𝜕E1/𝜕a_o1) * (𝜕a_o1/𝜕o1) * (𝜕o1/𝜕a_h1) = (a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7							
+    𝜕E1/𝜕a_h1 = (𝜕E1/𝜕a_o1) * (𝜕a_o1/𝜕o1) * (𝜕o1/𝜕a_h1) = (a_o1-t1) * a_o1 * (1-a_o1) * w5 + (a_o2-t2) * a_o2 * (1-a_o2) * w7	
+
+    𝜕E1/𝜕a_h2  = (a_o2-t2)* a_o2 * (1-a_o2) * w8 +  (a_o1-t1)* a_o1 * (1-a_o1) * w6							
                                                     
     𝜕E_t/𝜕w1 = (ET/a_o1) * (a_o1/o1) * (o1/a_h1) * (a_h1/h1) * (h1/w1)												
     𝜕E_t/𝜕w1 = (𝜕ET/𝜕a_h1) * (𝜕a_h1/𝜕h1) * (𝜕h1/𝜕w1)												
