@@ -83,7 +83,7 @@ Chain Rule in calculus:
 
 In order to update the weights from w1 to w8 we need to identify values of the  𝜕E_t/𝜕wi where i = 1,2,3...8
 
-To find value of 
+To find value of 𝜕E_t/𝜕w5 we need to to 𝜕(E1+E2)/𝜕w5
 
 E2 when calculated with respect to w5 is zero, as there is no contribution of w5 in E2. Based on above chain rule in calculus "𝜕E_t/𝜕w5" can be written as combination of (𝜕E1/𝜕a_o1)* (𝜕a_o1/𝜕o1)*(𝜕o1/𝜕w5)
 
