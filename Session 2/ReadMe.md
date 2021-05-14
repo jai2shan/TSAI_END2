@@ -78,7 +78,7 @@ Update any weights in the backpropagation using the below equation
 
 Chain Rule in calculus:    
 
-<div style="text-align:center"><img src="images/GradientDescentEq.PNG" /><div>
+<div style="text-align:center"><img src="images/ChainRule.PNG" /><div>
 <div style="text-align:left"></><div>
 
 In order to update the weights from w1 to w8 we need to identify values of the  𝜕E_t/𝜕wi where i = 1,2,3...8
