@@ -63,7 +63,7 @@ In the __getitem__ method, along with x1 and y1, x2(newly generated Random Numbe
 ---
 ![Model View](./images/Assignment.png)
 
-Model is designed in syn with the above structure
+Model is designed in syn with the above structure    
     1) Blue's are inputs    
     2) Red's actual network    
     3) Green's are output    
@@ -76,6 +76,6 @@ Model is designed in syn with the above structure
 ---
 Test data of Mnist coupled with random generated digit and sum(digit+random digit) are used for evaluating the results. Accuracy change over the epochs are showed in the below plot.
 
-![Results](./images/Results.png)
+![Results](./images/results.png)
 
 No of Epochs could have been reduced using the LRScheduler and all. 
